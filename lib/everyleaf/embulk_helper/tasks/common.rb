@@ -34,7 +34,7 @@ module Everyleaf
           raise OptionError, "gemspec file path is required" unless options[:gemspec]
           raise OptionError, "gemspec file '#{options[:gemspec]}' is not found" unless File.exists?(options[:gemspec])
 
-          required_options.each do |opt|
+          required_options.map(&:to_sym).each do |opt|
             raise OptionError, "#{opt} is required" unless options[opt]
           end
         end

@@ -96,7 +96,8 @@ gem "embulk", "0.1.2"
 
           def options
             {
-              gemspec: gemspec
+              gemspec: gemspec,
+              github_name: "everyleaf/everyleaf-embulk_helper",
             }
           end
 

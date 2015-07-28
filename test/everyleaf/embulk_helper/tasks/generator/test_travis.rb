@@ -53,6 +53,7 @@ YML
             {
               gemspec: gemspec,
               travis_yml_template: template_path.to_s,
+              github_name: "everyleaf/everyleaf-embulk_helper",
             }
           end
 
