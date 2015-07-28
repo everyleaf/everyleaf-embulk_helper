@@ -30,16 +30,17 @@ module Everyleaf
             FileUtils.mkdir_p(gemfiles_dir)
 
             Dir[gemfiles_dir.join("embulk-*")].each{|f| File.unlink(f)}
-            erb = ERB.new(gemfile_template_path.read)
 
             embulk_versions.each do |version|
               next if version < min_version
-              File.open(gemfiles_dir.join("embulk-#{version}"), "w") do |f|
-                f.write erb.result(binding())
-              end
+              create_gemfile(version)
             end
-            File.open(gemfiles_dir.join("embulk-latest"), "w") do |f|
-              version = "> #{min_version}"
+            create_gemfile("> #{min_version}", "latest")
+          end
+
+          def create_gemfile(version, name = nil)
+            erb = ERB.new(gemfile_template_path.read)
+            File.open(gemfiles_dir.join("embulk-#{name || version}"), "w") do |f|
               f.write erb.result(binding())
             end
           end
