@@ -12,10 +12,10 @@ require "pry"
 $LOAD_PATH.unshift(lib_dir)
 $LOAD_PATH.unshift(test_dir)
 
-require "everyleaf/embulk_helper/tasks"
-
 ENV["TEST_UNIT_MAX_DIFF_TARGET_STRING_SIZE"] ||= "5000"
 
 CodeClimate::TestReporter.start
+
+require "everyleaf/embulk_helper/tasks"
 
 exit Test::Unit::AutoRunner.run(true, test_dir)
