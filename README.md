@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/everyleaf/everyleaf-embulk-helper.svg?branch=master)](https://travis-ci.org/everyleaf/everyleaf-embulk-helper)
+[![Code Climate](https://codeclimate.com/github/everyleaf/everyleaf-embulk-helper/badges/gpa.svg)](https://codeclimate.com/github/everyleaf/everyleaf-embulk-helper)
+[![Test Coverage](https://codeclimate.com/github/everyleaf/everyleaf-embulk-helper/badges/coverage.svg)](https://codeclimate.com/github/everyleaf/everyleaf-embulk-helper/coverage)
+
 # Everyleaf::EmbulkHelper
 
 TODO: Write a gem description
