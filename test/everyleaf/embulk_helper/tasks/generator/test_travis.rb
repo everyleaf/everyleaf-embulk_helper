@@ -24,6 +24,8 @@ module Everyleaf
               task.name == "generate:travis"
             end
             assert travis_task
+          ensure
+            Rake::Task.clear
           end
 
           def test_travis_yml_create

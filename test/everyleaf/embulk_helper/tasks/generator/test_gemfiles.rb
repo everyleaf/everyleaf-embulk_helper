@@ -72,6 +72,8 @@ gem "embulk", "0.1.2"
               task.name == "generate:gemfiles"
             end
             assert gemfiles_task
+          ensure
+            Rake::Task.clear
           end
 
           def test_gemfiles_create
