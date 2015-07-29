@@ -67,7 +67,7 @@ module Everyleaf
           end
 
           def version_target
-            options[:version_target] || ENV["UP"] || "patch"
+            ENV["UP"] || options[:version_target] || "patch"
           end
 
           def update_gemfile_lock
