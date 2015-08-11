@@ -96,26 +96,26 @@ NOTE: `versions` in template is assigned by file globbing from `gemfiles/*`, thu
     $ cat > .travis.yml.erb
     gemfiles:
     <% versions.each do |v| -%>
-      - <%= v %>
+      - gemfiles/<%= v %>
     <% end -%>
 
     $ bundle exec rake generate:travis
     I, [2015-08-11T11:06:53.375018 #10911]  INFO -- : Updated .travis.yml
     $ cat .travis.yml
     gemfiles:
-      - embulk-0.6.10
-      - embulk-0.6.11
-      - embulk-0.6.12
-      - embulk-0.6.13
-      - embulk-0.6.14
-      - embulk-0.6.15
-      - embulk-0.6.16
-      - embulk-0.6.17
-      - embulk-0.6.18
-      - embulk-0.6.19
-      - embulk-0.6.20
-      - embulk-0.6.21
-      - embulk-latest
+      - gemfiles/embulk-0.6.10
+      - gemfiles/embulk-0.6.11
+      - gemfiles/embulk-0.6.12
+      - gemfiles/embulk-0.6.13
+      - gemfiles/embulk-0.6.14
+      - gemfiles/embulk-0.6.15
+      - gemfiles/embulk-0.6.16
+      - gemfiles/embulk-0.6.17
+      - gemfiles/embulk-0.6.18
+      - gemfiles/embulk-0.6.19
+      - gemfiles/embulk-0.6.20
+      - gemfiles/embulk-0.6.21
+      - gemfiles/embulk-latest
 
 ## Contributing
 
