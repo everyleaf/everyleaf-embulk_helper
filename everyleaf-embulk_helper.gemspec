@@ -6,11 +6,11 @@ require 'everyleaf/embulk_helper/version'
 Gem::Specification.new do |spec|
   spec.name          = "everyleaf-embulk_helper"
   spec.version       = Everyleaf::EmbulkHelper::VERSION
-  spec.authors       = ["uu59"]
-  spec.email         = ["k@uu59.org"]
+  spec.authors       = ["yoshihara", "uu59"]
+  spec.email         = ["h.yoshihara@everyleaf.com", "k@uu59.org"]
   spec.summary       = %q{Add some handy helpers for developing Embulk plugins}
   spec.description   = %q{Add some handy helpers for developing Embulk plugins}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/everyleaf/everyleaf-embulk-helper"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
