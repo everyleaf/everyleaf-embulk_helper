@@ -40,7 +40,7 @@ module Everyleaf
           def initial_template
             <<-ERB
 source 'https://rubygems.org/'
-gemspec :path => '#{File.dirname(gemspec_path)}'
+gemspec :path => '#{gemspec_path.dirname.relative_path_from(gemfiles_dir)}/'
 
 gem "embulk", "<%= version %>"
             ERB
