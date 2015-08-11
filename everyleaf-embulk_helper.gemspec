@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["h.yoshihara@everyleaf.com", "k@uu59.org"]
   spec.summary       = %q{Add some handy helpers for developing Embulk plugins}
   spec.description   = %q{Add some handy helpers for developing Embulk plugins}
-  spec.homepage      = "https://github.com/everyleaf/everyleaf-embulk-helper"
+  spec.homepage      = "https://github.com/everyleaf/everyleaf-embulk_helper"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
