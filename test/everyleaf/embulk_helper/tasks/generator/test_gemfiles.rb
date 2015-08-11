@@ -66,6 +66,49 @@ gem "embulk", "0.1.2"
             end
           end
 
+          class TestInitialContent < self
+            def setup
+              FileUtils.mkdir_p root
+              FileUtils.touch gemspec_path
+
+              task = Gemfiles.new(options.merge({
+                github_name: "dummy/dummy",
+                gemspec: gemspec_path,
+                gemfile_template_path: gemfile_template_path,
+              }))
+              mute_logger(task)
+              task.send(:init)
+            end
+
+            def teardown
+              FileUtils.rm_rf root
+            end
+
+            def test_relative_path
+              content = File.read(gemfile_template_path)
+              assert content.include?("path => '../'") # the gemspec path from each gemfiles/* as relative
+            end
+
+            def test_embulk_version_contain
+              content = File.read(gemfile_template_path)
+              assert content.include?(%Q|gem "embulk", "<%= version %>"|)
+            end
+
+            private
+
+            def gemfile_template_path
+              root.join("gemfiles/template.erb")
+            end
+
+            def root
+              Pathname.new("/tmp/foo")
+            end
+
+            def gemspec_path
+              root.join("bar.spec")
+            end
+          end
+
           def test_task_installed
             Everyleaf::EmbulkHelper::Tasks.install(options)
             gemfiles_task = Rake::Task.tasks.find do |task|
