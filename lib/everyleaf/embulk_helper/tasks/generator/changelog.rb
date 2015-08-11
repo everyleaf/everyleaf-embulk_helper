@@ -11,6 +11,7 @@ module Everyleaf
 
           def install_tasks
             namespace :generate do
+              desc "Generate chengelog then bump version"
               task :prepare_release => [:changelog, :bump_version]
 
               desc "Generate CHANGELOG.md from previous release"
