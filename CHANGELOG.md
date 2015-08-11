@@ -1,3 +1,8 @@
+## 0.0.2 - 2015-08-11
+
+* [fix] Fix gemspec path within generated gemfile template [#2](https://github.com/everyleaf/everyleaf-embulk_helper/pull/2)
+* [improve] generage:changelog can accept `CURRENT_VER` and `NEXT_VER` environment variable instead of auto detection
+
 ## 0.0.1 - 2015-08-11
 
 The first release!!
