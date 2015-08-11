@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Everyleaf::EmbulkHelper::VERSION
   spec.authors       = ["uu59"]
   spec.email         = ["k@uu59.org"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Add some handy helpers for developing Embulk plugins}
+  spec.description   = %q{Add some handy helpers for developing Embulk plugins}
   spec.homepage      = ""
   spec.license       = "MIT"
 
