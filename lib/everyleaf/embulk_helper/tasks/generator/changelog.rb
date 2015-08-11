@@ -50,10 +50,11 @@ module Everyleaf
           end
 
           def current_version
-            Gem::Version.new(gemspec_path.read[/spec\.version += *"([0-9]+\.[0-9]+\.[0-9]+)"/, 1])
+            ENV["CURRENT_VER"] || Gem::Version.new(gemspec_path.read[/spec\.version += *"([0-9]+\.[0-9]+\.[0-9]+)"/, 1])
           end
 
           def next_version
+            return ENV["NEXT_VER"] if ENV["NEXT_VER"]
             major, minor, patch = current_version.segments
             ver = case version_target
             when "patch"
