@@ -81,7 +81,7 @@ module Everyleaf
 
           def pull_request_numbers
             sync_git_repo
-            `git log v#{old_version}..origin/master --oneline`.scan(/#[0-9]+/).map do |num_with_hash|
+            `git log v#{current_version}..origin/master --oneline`.scan(/#[0-9]+/).map do |num_with_hash|
               num_with_hash[/[0-9]+/]
             end
           end
