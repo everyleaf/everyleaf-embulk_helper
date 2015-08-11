@@ -20,11 +20,31 @@ module Everyleaf
 
           def gemfiles
             logger.info "Generate Embulk gemfiles from '#{min_version}' to latest"
+            init
             create_gemfiles
             logger.info "Updated Gemfiles '#{min_version}' to '#{embulk_versions.max}'"
           end
 
           private
+
+          def init
+            FileUtils.mkdir_p File.dirname(gemfile_template_path)
+            unless File.exists?(gemfile_template_path)
+              logger.info "Generate gemfiles template file (#{gemfile_template_path})"
+              File.open(gemfile_template_path, "w") do |f|
+                f.write initial_template
+              end
+            end
+          end
+
+          def initial_template
+            <<-ERB
+source 'https://rubygems.org/'
+gemspec :path => '#{File.dirname(gemspec_path)}'
+
+gem "embulk", "<%= version %>"
+            ERB
+          end
 
           def create_gemfiles
             FileUtils.mkdir_p(gemfiles_dir)
