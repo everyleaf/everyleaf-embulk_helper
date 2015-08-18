@@ -1,3 +1,8 @@
+## 0.0.3 - 2015-08-18
+
+* [improve] travis: Initial travis.yml template has allow_failures Embulk 0.6.22 [#3](https://github.com/everyleaf/everyleaf-embulk_helper/pull/3)
+* [improve] gemfiles: Genarates embulk-0.x-latest gemfile [#3](https://github.com/everyleaf/everyleaf-embulk_helper/pull/3)
+
 ## 0.0.2 - 2015-08-11
 
 * [fix] Fix gemspec path within generated gemfile template [#2](https://github.com/everyleaf/everyleaf-embulk_helper/pull/2)
