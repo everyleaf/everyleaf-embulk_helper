@@ -89,7 +89,7 @@ gem "embulk", "<%= version %>"
             target_versions.map do |version|
               major, minor, _ = version.segments
               Gem::Version.new([major, minor].join("."))
-            end.compact.uniq
+            end.uniq
           end
         end
       end
