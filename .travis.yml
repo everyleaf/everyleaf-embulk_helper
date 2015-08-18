@@ -1,6 +1,7 @@
 language: ruby
 rvm:
 - jruby-19mode
+env: 'JRUBY_OPTS="-Xcli.debug=true --debug"' # for test coverage
 addons:
   code_climate:
     repo_token:

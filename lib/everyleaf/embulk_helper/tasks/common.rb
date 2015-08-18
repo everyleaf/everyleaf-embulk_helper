@@ -60,7 +60,7 @@ module Everyleaf
         end
 
         def embulk_tags
-          JSON.parse(open("https://api.github.com/repos/embulk/embulk/tags").read)
+          @embulk_tags ||= JSON.parse(open("https://api.github.com/repos/embulk/embulk/tags").read)
         end
 
         def embulk_versions
