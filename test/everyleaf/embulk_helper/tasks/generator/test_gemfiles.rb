@@ -128,7 +128,7 @@ gem "embulk", "0.1.2"
             @task.gemfiles
             files = Dir["#{@task.root_dir}/gemfiles/embulk-*"]
 
-            assert_true(files.length > 0)
+            assert_false(files.empty?)
           end
 
           private
