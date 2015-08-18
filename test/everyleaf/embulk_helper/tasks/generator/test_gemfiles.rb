@@ -23,8 +23,8 @@ gem "embulk", "<%= version %>"
               @task.gemfiles
               files = Dir["#{@task.root_dir}/gemfiles/embulk-*"]
 
-              # all versions + latest version
-              assert_equal(embulk_versions.length + 1, files.length)
+              # all versions + minor versions + latest version
+              assert_equal(embulk_versions.length + minor_versions.length + 1, files.length)
             end
 
             def test_0_1_1_with_env
@@ -32,19 +32,24 @@ gem "embulk", "<%= version %>"
               @task.gemfiles
               files = Dir["#{@task.root_dir}/gemfiles/embulk-*"]
 
-              # all versions + latest version - 0.1.1
-              assert_equal(4, files.length)
+              # 0.1.1 + 0.1.2 + 0.1-latest + 0.2.0 + 0.2-latest + latest version
+              assert_equal(6, files.length)
             ensure
               ENV.delete("MIN_VERSION")
             end
 
             def test_0_1_1_with_options
-              opt = options
-              stub(self).options { opt[:min_vesion] = "0.1.1"; opt }
+              stub(@task).options { options.merge(min_version: "0.1.1") }
+
+              @task.gemfiles
               files = Dir["#{@task.root_dir}/gemfiles/embulk-*"]
 
-              # all versions + latest version - 0.1.1
-              assert_equal(4, files.length)
+              # 0.1.1 + 0.1.2 + 0.1-latest + 0.2.0 + 0.2-latest + latest version
+              assert_equal(6, files.length)
+            end
+
+            def minor_versions
+              @task.send(:target_minor_versions)
             end
           end
 
@@ -123,8 +128,7 @@ gem "embulk", "0.1.2"
             @task.gemfiles
             files = Dir["#{@task.root_dir}/gemfiles/embulk-*"]
 
-            # each version + latest version
-            assert_equal(embulk_versions.length + 1, files.length)
+            assert_true(files.length > 0)
           end
 
           private

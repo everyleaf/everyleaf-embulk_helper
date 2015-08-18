@@ -55,6 +55,13 @@ gem "embulk", "<%= version %>"
               next if version < min_version
               create_gemfile(version)
             end
+
+            # e.g. embulk-0.6-latest
+            target_minor_versions.each do |version|
+              create_gemfile("~> #{version}", "#{version}-latest")
+            end
+
+            # embulk-latest
             create_gemfile("> #{min_version}", "latest")
           end
 
@@ -71,6 +78,14 @@ gem "embulk", "<%= version %>"
 
           def gemfile_template_path
             root_dir.join(options[:gemfile_template] || DEFAULT_EMBULK_GEMFILE_TEMPLATE)
+          end
+
+          def target_minor_versions
+            embulk_versions.map do |version|
+              next if version < min_version
+              major, minor, _ = version.segments
+              Gem::Version.new([major, minor].join("."))
+            end.compact.uniq
           end
         end
       end
