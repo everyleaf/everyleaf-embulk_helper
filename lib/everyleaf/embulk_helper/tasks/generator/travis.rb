@@ -48,6 +48,10 @@ gemfile:
 <% versions.each do |file| -%>
   - gemfiles/<%= file %>
 <% end -%>
+
+matrix:
+  allow_failures:
+    - gemfile: gemfiles/embulk-0.6.22
             YML
           end
 
