@@ -49,7 +49,7 @@ gem "embulk", "<%= version %>"
             end
 
             def minor_versions
-              @task.send(:target_minor_versions)
+              @task.send(:target_versions_without_patch)
             end
           end
 
