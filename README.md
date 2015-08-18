@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/everyleaf/everyleaf-embulk_helper.svg?branch=master)](https://travis-ci.org/everyleaf/everyleaf-embulk_helper)
+[![Gem Version](https://badge.fury.io/rb/everyleaf-embulk_helper.svg)](http://badge.fury.io/rb/everyleaf-embulk_helper)
 [![Code Climate](https://codeclimate.com/github/everyleaf/everyleaf-embulk_helper/badges/gpa.svg)](https://codeclimate.com/github/everyleaf/everyleaf-embulk_helper)
 [![Test Coverage](https://codeclimate.com/github/everyleaf/everyleaf-embulk_helper/badges/coverage.svg)](https://codeclimate.com/github/everyleaf/everyleaf-embulk_helper/coverage)
 
