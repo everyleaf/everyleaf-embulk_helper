@@ -1,3 +1,6 @@
+## 0.0.4 - 2015-08-19
+* [improve] Ignore errors on -latest versions [#4](https://github.com/everyleaf/everyleaf-embulk_helper/pull/4)
+
 ## 0.0.3 - 2015-08-18
 
 * [improve] travis: Initial travis.yml template has allow_failures Embulk 0.6.22 [#3](https://github.com/everyleaf/everyleaf-embulk_helper/pull/3)
