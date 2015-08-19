@@ -1,6 +1,7 @@
 language: ruby
 rvm:
-- jruby-19mode
+  - jruby-19mode
+  - jruby-9.0.0.0 # NOTE: rvm 1.26.10 recognize as jruby-9.0.0pre1
 env: 'JRUBY_OPTS="-Xcli.debug=true --debug"' # for test coverage
 addons:
   code_climate:
