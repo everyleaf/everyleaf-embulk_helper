@@ -52,6 +52,10 @@ gemfile:
 matrix:
   allow_failures:
     - gemfile: gemfiles/embulk-0.6.22
+    # Ignore failure for *-latest
+    <% versions.find_all{|file| file.to_s.match(/-latest/)}.each do |file| -%>
+- gemfile: <%= file %>
+    <% end %>
             YML
           end
 
