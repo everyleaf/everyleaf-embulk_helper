@@ -88,7 +88,7 @@ gem "embulk", "<%= version %>"
           def target_versions_without_patch
             target_versions.map do |version|
               major, minor, _ = version.segments
-              Gem::Version.new([major, minor].join("."))
+              Gem::Version.new([major, minor, 0].join(".")) # NOTE: "~> 0.1.0" -> 0.1.x (< 0.2) / "~> 0.1" -> 0.x (< 1.0)
             end.uniq
           end
         end
