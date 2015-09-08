@@ -1,3 +1,7 @@
+## 0.0.5 - 2015-09-08
+
+* [improve] [travis] Modify template to test Embulk 0.7.x matrix [#5](https://github.com/everyleaf/everyleaf-embulk_helper/pull/5)
+
 ## 0.0.4 - 2015-08-19
 * [improve] Ignore errors on -latest versions [#4](https://github.com/everyleaf/everyleaf-embulk_helper/pull/4)
 
