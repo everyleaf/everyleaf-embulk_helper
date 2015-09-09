@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    everyleaf-embulk_helper (0.0.5)
+    everyleaf-embulk_helper (0.0.6)
 
 GEM
   remote: https://rubygems.org/
@@ -52,3 +52,6 @@ DEPENDENCIES
   rake (~> 10.0)
   test-unit
   test-unit-rr
+
+BUNDLED WITH
+   1.10.6

@@ -1,3 +1,7 @@
+## 0.0.6 - 2015-09-09
+
+* [fix] [gemfile] Fix 0.x-latest gemfile [#6](https://github.com/everyleaf/everyleaf-embulk_helper/pull/6)
+
 ## 0.0.5 - 2015-09-08
 
 * [improve] [travis] Modify template to test Embulk 0.7.x matrix [#5](https://github.com/everyleaf/everyleaf-embulk_helper/pull/5)
